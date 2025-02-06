@@ -1,12 +1,14 @@
-$primary-color: #b67807;
-$secondary-color: white;
-$accent-color: #bbbbbb;
+$primary-color: #1E1E1E;
+$secondary-color: #282828;
+$faded: #636366;
 
 $primary-text: white;
 $secondary-text: black;
 
-$highlight-color: #ffd900;
-$watermark-color: #ffffff;
-$pseudo-black: #2c2c2c;
+//color for leetcode difficulty
+$easy: #00B8A3;
+$medium: #E8B01F;
+$hard: #FD365E;
+$incomplete: #4A4A4A;
 
-$font-family: 'Arial', sans-serif;
+$font-family: "Inter", serif;
