@@ -9,7 +9,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   mode: prod ? 'production' : 'development',
   entry: {
-    panel: './src/panel/index.tsx',
+    panel: './src/index.tsx',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

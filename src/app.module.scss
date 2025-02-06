@@ -1,13 +1,12 @@
-@use '../variables.scss' as *;
+@use './variables.scss' as *;
 
 *{
   padding: 0;
   margin: 0;
+  color: $primary-text;
 }
 
 .app{
-  display: flex;
-  justify-content: center;
   font-family: $font-family;
 
   background-color: $secondary-color;
