@@ -1,0 +1,55 @@
+@use '../variables.scss' as *;
+
+.panel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+
+  header{
+    display: flex;
+    justify-content: center;
+
+    background: $primary-color;
+    padding: 20px 0;
+    width: 100%;
+  }
+
+  .donutChart{
+    color: $faded;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.75rem;
+
+    .totalSolved{
+      font-size: 3rem;
+    }
+    hr{
+      border-color: $faded;
+      width: 100%;
+    }
+  }
+
+  .difficultyBreakdown{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding-bottom: 50px;
+    width: 200px;
+
+    div{
+      display: flex;
+      justify-content: space-between;
+
+      span{
+        color: $faded;
+      }
+    }
+    .easy{color: $easy}
+    .medium{color: $medium}
+    .hard{color: $hard}
+  }
+}
