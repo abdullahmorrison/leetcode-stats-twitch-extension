@@ -1,26 +1,37 @@
 import React from "react"
 import * as styles from "./panel.module.css"
 import DonutChart from '../donutChart/DonutChart';
+import { useQuery } from "@tanstack/react-query";
 
 export default function Panel() {
-  const easy = 200
-  const medium = 230
-  const hard = 38
-  const total = 3445
+  const {data, isError, error, isLoading }= useQuery({
+    queryKey: ['leetcode-stats'],
+    queryFn: async ()=>{
+      const url = "https://alfa-leetcode-api.onrender.com"
+      const solved = await fetch(`${url}/userProfile/abdullahmorrison`)
+      const badges = await fetch(`${url}/abdullahmorrison/badges`)
+      return {...(await solved.json()), ...(await badges.json())}
+    }
+  })
+
+  if(isError) return error.message
+
+  if(isLoading) return "Loading..."
 
   return (
     <div className={styles.panel}>
       <header>
-        Abdullah's Leetcode Stats
+        <img src={data.badges[0].icon} alt="leetcode badge" width={40}/>
+        <p>Abdullah's Leetcode Stats</p>
       </header>
 
       <DonutChart
         className="test"
         data={[
-          { label: 'Easy', value: easy, },
-          { label: 'Medium', value: medium, },
-          { label: 'Hard', value: hard, },
-          { label: 'Incomplete', value: total-(easy+medium+hard), isEmpty: true, },
+          { label: 'Easy', value: data.easySolved, },
+          { label: 'Medium', value: data.mediumSolved, },
+          { label: 'Hard', value: data.hardSolved, },
+          { label: 'Incomplete', value: data.totalQuestions-data.totalSolved, isEmpty: true, },
         ]}
         colors={["#00B8A3", "#E8B01F", "#FD365E"]}
         emptyColor="#4A4A4A"
@@ -35,15 +46,15 @@ export default function Panel() {
       <div className={styles.difficultyBreakdown}>
         <div>
           <p className={styles.easy}>Easy</p>
-          <p>{easy}<span>/300</span></p>
+          <p>{data.easySolved} <span>/{data.totalEasy}</span></p>
         </div>
         <div>
           <p className={styles.medium}>Medium</p>
-          <p>{medium}<span>/300</span></p>
+          <p>{data.mediumSolved} <span>/{data.totalMedium}</span></p>
         </div>
         <div>
           <p className={styles.hard}>Hard</p>
-          <p>{hard}<span>/300</span></p>
+          <p>{data.hardSolved} <span>/{data.totalHard}</span></p>
         </div>
       </div>
     </div>

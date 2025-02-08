@@ -9,7 +9,11 @@
 
   header{
     display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 5px;
+
+    font-size: 1.25rem;
 
     background: $primary-color;
     padding: 20px 0;
@@ -30,6 +34,8 @@
 
       span{
         color: $faded;
+        font-size: 1.25rem;
+        font-weight: 600;
       }
     }
     .easy{color: $easy}
