@@ -16,22 +16,6 @@
     width: 100%;
   }
 
-  .donutChart{
-    color: $faded;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1.75rem;
-
-    .totalSolved{
-      font-size: 3rem;
-    }
-    hr{
-      border-color: $faded;
-      width: 100%;
-    }
-  }
-
   .difficultyBreakdown{
     display: flex;
     flex-direction: column;
