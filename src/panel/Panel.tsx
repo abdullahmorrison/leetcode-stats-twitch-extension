@@ -14,7 +14,10 @@ export default function Panel() {
     }
   })
 
-  if(isError) return error.message
+  if(isError){
+    console.log(error.message)
+    return "Error: failed to fetch leetcode stats.."
+  }
 
   if(isLoading) return "Loading..."
 
