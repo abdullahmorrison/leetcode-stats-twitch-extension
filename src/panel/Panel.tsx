@@ -2,6 +2,7 @@ import React from "react"
 import * as styles from "./panel.module.css"
 import DonutChart from '../donutChart/DonutChart';
 import { useQuery } from "@tanstack/react-query";
+import Error from "./Error/Error";
 
 export default function Panel() {
   const {data, isError, error, isLoading }= useQuery({
@@ -16,7 +17,7 @@ export default function Panel() {
 
   if(isError){
     console.log(error.message)
-    return "Error: failed to fetch leetcode stats.."
+    return <Error/>
   }
 
   if(isLoading) return "Loading..."
