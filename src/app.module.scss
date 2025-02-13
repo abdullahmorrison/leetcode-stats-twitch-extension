@@ -7,10 +7,17 @@
   font-family: $font-family;
 }
 
+body{
+  background: black;
+}
+
 .app{
+  display: flex;
+  flex-direction: column;
+
   background-color: $secondary-color;
   font-size: 1.5em;
 
-  height: 100vh;
-  width: 100vw;
+  height: 500px;
+  width: 318px;
 }
