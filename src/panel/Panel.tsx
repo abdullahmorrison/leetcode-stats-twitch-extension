@@ -17,7 +17,10 @@ export default function Panel() {
   })
 
   if(isError){
-    console.log(error.message)
+    console.group('Abdullah LeetCode Stats Twitch Extension Error: ');
+    console.error(error.name)
+    console.error(error.message)
+    console.groupEnd()
     return <Error/>
   }
 
