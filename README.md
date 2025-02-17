@@ -1,5 +1,5 @@
-# Leetcode Stats Twitch Extension
-Twitch extension that displays the Leetcode stats of Abdullah Morrison
+# LeetCode Stats Twitch Extension
+Twitch extension that displays the LeetCode stats of Abdullah Morrison
 
 ## Local Setup
 

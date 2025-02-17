@@ -26,7 +26,7 @@ export default function Panel() {
     <div className={styles.panel}>
       <header>
         <img src={data.badges[0].icon} alt="leetcode badge" width={40}/>
-        <p>Abdullah's Leetcode Stats</p>
+        <p>Abdullah's LeetCode Stats</p>
       </header>
 
       <DonutChart

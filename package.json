@@ -1,7 +1,7 @@
 {
   "name": "leetcode-stats-twitch-extension",
   "version": "1.0.0",
-  "description": "Twitch extension that displays Abdullah Morrison's Leetcode stats",
+  "description": "Twitch extension that displays Abdullah Morrison's LeetCode stats",
   "main": "src/index.tsx",
   "scripts": {
     "start": "npm-run-all --parallel sass:watch serve",
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/abdullahmorrison/leetcode-stats-twitch-extension.git"
   },
   "keywords": [
-    "Leetcode",
+    "LeetCode",
     "Twitch",
     "Abdullah"
   ],
