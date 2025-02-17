@@ -3,6 +3,7 @@ import * as styles from "./panel.module.css"
 import DonutChart from '../donutChart/DonutChart';
 import { useQuery } from "@tanstack/react-query";
 import Error from "./Error/Error";
+import Skeleton from "./Skeleton/Skeleton";
 
 export default function Panel() {
   const {data, isError, error, isLoading }= useQuery({
@@ -20,7 +21,7 @@ export default function Panel() {
     return <Error/>
   }
 
-  if(isLoading) return "Loading..."
+  if(isLoading) return <Skeleton/>
 
   return (
     <div className={styles.panel}>
