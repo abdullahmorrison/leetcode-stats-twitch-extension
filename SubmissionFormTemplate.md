@@ -1,6 +1,6 @@
 LeetCode is a platform that allows users to complete coding challenges. This extension displays the LeetCode stats of (me) Abdullah Morrison.
 
-ChangeLog:
+Change Log:
 - Added Skeleton loader that displays as the LeetCode stats data is being fetched.
 - Added Error page if the leetcode stats fail to load.
 
