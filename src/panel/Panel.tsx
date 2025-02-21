@@ -29,7 +29,7 @@ export default function Panel() {
   return (
     <div className={styles.panel}>
       <header>
-        <img src={data.badges[0].icon} alt="leetcode badge" width={40}/>
+        <img src={data.activeBadge.icon} alt="leetcode badge" width={40}/>
         <p>Abdullah's LeetCode Stats</p>
       </header>
 
