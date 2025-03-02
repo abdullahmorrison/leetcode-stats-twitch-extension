@@ -1,9 +1,9 @@
 import React from "react"
 import * as styles from "./panel.module.css"
-import DonutChart from '../donutChart/DonutChart';
-import { useQuery } from "@tanstack/react-query";
-import Error from "./Error/Error";
-import Skeleton from "./Skeleton/Skeleton";
+import DonutChart from '../donutChart/DonutChart'
+import { useQuery } from "@tanstack/react-query"
+import Error from "./Error/Error"
+import Skeleton from "./Skeleton/Skeleton"
 
 export default function Panel() {
   const {data, isError, error, isLoading }= useQuery({
@@ -11,15 +11,22 @@ export default function Panel() {
     queryFn: async ()=>{
       const url = "https://alfa-leetcode-api.onrender.com"
       const solved = await fetch(`${url}/userProfile/abdullahmorrison`)
+        .then(res=>res.json())
       const badges = await fetch(`${url}/abdullahmorrison/badges`)
-      return {...(await solved.json()), ...(await badges.json())}
+        .then(res=>res.json())
+
+      let activeBadgeUrl = badges.activeBadge.icon
+      if(!activeBadgeUrl.includes('https'))
+        activeBadgeUrl = `https://leetcode.com${activeBadgeUrl}`
+
+      return { ...solved, activeBadge: activeBadgeUrl }
     }
   })
 
   if(isError){
-    console.group('Abdullah LeetCode Stats Twitch Extension Error: ');
-    console.error(error.name)
-    console.error(error.message)
+    console.group('Abdullah LeetCode Stats Twitch Extension Error: ')
+      console.error(error.name)
+      console.error(error.message)
     console.groupEnd()
     return <Error/>
   }
@@ -29,7 +36,7 @@ export default function Panel() {
   return (
     <div className={styles.panel}>
       <header>
-        <img src={data.activeBadge.icon} alt="leetcode badge" width={40}/>
+        <img src={data.activeBadge} alt="leetcode badge" width={40}/>
         <p>Abdullah's LeetCode Stats</p>
       </header>
 
