@@ -5,4 +5,4 @@ Change Log:
 
 Allowlist explanations:
     - https://alfa-leetcode-api.onrender.com/: The API the extension queries to get the LeetCode stats.
-    - https://assets.leetcode.com: The image that is fetched to display Abdullah's latest LeetCode badge shown in the header of the panel.
+    - https://assets.leetcode.com & https://leetcode.com: The image that is fetched to display Abdullah's latest LeetCode badge shown in the header of the panel.
